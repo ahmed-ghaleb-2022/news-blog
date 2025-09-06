@@ -40,7 +40,7 @@ export default function Show({ post }: { post: Post }) {
                     <div className="px-2 py-2">
                         <p className="text-xl font-semibold">Title: {post.title}</p>
                         <p className="text-lg">postText: </p>
-                        <p>{ post.content }</p>
+                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
                     </div>
                 </div>
 

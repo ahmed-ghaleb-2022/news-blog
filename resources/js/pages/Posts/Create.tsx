@@ -1,14 +1,14 @@
 import AppLayout from '@/layouts/app-layout';
-
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { index, store } from '@/routes/posts';
 import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircleIcon, Dot} from "lucide-react"
+import TextEditor from '@/components/TextEditor';
+
 
 const breadcrumbs: BreadcrumbItem[] = [
      {
@@ -22,6 +22,8 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 export default function Create() {
+
+
     const { data, setData, post, processing, errors } = useForm({
         title: '',
         content: '',
@@ -31,6 +33,8 @@ export default function Create() {
         e.preventDefault();
         post(store().url);
     };
+
+     
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -59,9 +63,7 @@ export default function Create() {
                     </div>
                     <div>
                         <Label className="text-lg">Content</Label>
-                        <Textarea name="content" onChange={(e) => setData('content', e.target.value)}>
-                            {data.content}
-                        </Textarea>
+                        <TextEditor onTextChange={(value) => setData('content', value)}/>
                     </div>
                     <div>
                         <Button className="mt-4 hover:cursor-pointer" type="submit">

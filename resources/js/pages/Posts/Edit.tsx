@@ -9,6 +9,7 @@ import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircleIcon, Dot} from "lucide-react"
+import TextEditor from '@/components/TextEditor';
 
 const breadcrumbs: BreadcrumbItem[] = [
      {
@@ -68,9 +69,7 @@ export default function Create({ post  }: { post: Post }) {
                     </div>
                     <div>
                         <Label className="text-lg">Content</Label>
-                        <Textarea name="content" onChange={(e) => setData('content', e.target.value)}>
-                            {data.content}
-                        </Textarea>
+                        <TextEditor initialText={data.content} onTextChange={(value) => setData('content', value)}/>
                     </div>
                     <div>
                         <Button className="mt-4 hover:cursor-pointer" type="submit">

@@ -68,7 +68,7 @@ export default function Index({ posts }: { posts: Post[] }) {
                                         <div className="text-sm text-gray-900">{post.title}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">{post.content.substring(0, 50)} ...</div>
+                                        <div className="text-sm text-gray-900">{post.content.substring(0, 100).replace(/<[^>]+>/g, '')} ...</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="text-sm text-gray-900">

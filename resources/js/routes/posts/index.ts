@@ -212,7 +212,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
 export const show = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -227,7 +227,7 @@ show.definition = {
 
 /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
 show.url = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -260,7 +260,7 @@ show.url = (args: { post: number | { id: number } } | [post: number | { id: numb
 
 /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
 show.get = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -269,7 +269,7 @@ show.get = (args: { post: number | { id: number } } | [post: number | { id: numb
 })
 /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
 show.head = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -279,7 +279,7 @@ show.head = (args: { post: number | { id: number } } | [post: number | { id: num
 
     /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
     const showForm = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -289,7 +289,7 @@ show.head = (args: { post: number | { id: number } } | [post: number | { id: num
 
             /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
         showForm.get = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -298,7 +298,7 @@ show.head = (args: { post: number | { id: number } } | [post: number | { id: num
         })
             /**
 * @see \App\Http\Controllers\PostController::show
- * @see app/Http/Controllers/PostController.php:48
+ * @see app/Http/Controllers/PostController.php:49
  * @route '/posts/{post}'
  */
         showForm.head = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -314,7 +314,7 @@ show.head = (args: { post: number | { id: number } } | [post: number | { id: num
     show.form = showForm
 /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
 export const edit = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -329,7 +329,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
 edit.url = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions) => {
@@ -362,7 +362,7 @@ edit.url = (args: { post: number | { id: number } } | [post: number | { id: numb
 
 /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
 edit.get = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -371,7 +371,7 @@ edit.get = (args: { post: number | { id: number } } | [post: number | { id: numb
 })
 /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
 edit.head = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -381,7 +381,7 @@ edit.head = (args: { post: number | { id: number } } | [post: number | { id: num
 
     /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
     const editForm = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -391,7 +391,7 @@ edit.head = (args: { post: number | { id: number } } | [post: number | { id: num
 
             /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
         editForm.get = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -400,7 +400,7 @@ edit.head = (args: { post: number | { id: number } } | [post: number | { id: num
         })
             /**
 * @see \App\Http\Controllers\PostController::edit
- * @see app/Http/Controllers/PostController.php:56
+ * @see app/Http/Controllers/PostController.php:57
  * @route '/posts/{post}/edit'
  */
         editForm.head = (args: { post: number | { id: number } } | [post: number | { id: number } ] | number | { id: number }, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
@@ -416,7 +416,7 @@ edit.head = (args: { post: number | { id: number } } | [post: number | { id: num
     edit.form = editForm
 /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
 export const update = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -431,7 +431,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
 update.url = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -459,7 +459,7 @@ update.url = (args: { post: string | number } | [post: string | number ] | strin
 
 /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
 update.put = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -468,7 +468,7 @@ update.put = (args: { post: string | number } | [post: string | number ] | strin
 })
 /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
 update.patch = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
@@ -478,7 +478,7 @@ update.patch = (args: { post: string | number } | [post: string | number ] | str
 
     /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
     const updateForm = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -493,7 +493,7 @@ update.patch = (args: { post: string | number } | [post: string | number ] | str
 
             /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
         updateForm.put = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -507,7 +507,7 @@ update.patch = (args: { post: string | number } | [post: string | number ] | str
         })
             /**
 * @see \App\Http\Controllers\PostController::update
- * @see app/Http/Controllers/PostController.php:64
+ * @see app/Http/Controllers/PostController.php:65
  * @route '/posts/{post}'
  */
         updateForm.patch = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -523,7 +523,7 @@ update.patch = (args: { post: string | number } | [post: string | number ] | str
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\PostController::destroy
- * @see app/Http/Controllers/PostController.php:83
+ * @see app/Http/Controllers/PostController.php:84
  * @route '/posts/{post}'
  */
 export const destroy = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -538,7 +538,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\PostController::destroy
- * @see app/Http/Controllers/PostController.php:83
+ * @see app/Http/Controllers/PostController.php:84
  * @route '/posts/{post}'
  */
 destroy.url = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -566,7 +566,7 @@ destroy.url = (args: { post: string | number } | [post: string | number ] | stri
 
 /**
 * @see \App\Http\Controllers\PostController::destroy
- * @see app/Http/Controllers/PostController.php:83
+ * @see app/Http/Controllers/PostController.php:84
  * @route '/posts/{post}'
  */
 destroy.delete = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -576,7 +576,7 @@ destroy.delete = (args: { post: string | number } | [post: string | number ] | s
 
     /**
 * @see \App\Http\Controllers\PostController::destroy
- * @see app/Http/Controllers/PostController.php:83
+ * @see app/Http/Controllers/PostController.php:84
  * @route '/posts/{post}'
  */
     const destroyForm = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -591,7 +591,7 @@ destroy.delete = (args: { post: string | number } | [post: string | number ] | s
 
             /**
 * @see \App\Http\Controllers\PostController::destroy
- * @see app/Http/Controllers/PostController.php:83
+ * @see app/Http/Controllers/PostController.php:84
  * @route '/posts/{post}'
  */
         destroyForm.delete = (args: { post: string | number } | [post: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
