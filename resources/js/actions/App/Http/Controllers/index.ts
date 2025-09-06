@@ -1,7 +1,9 @@
+import PostController from './PostController'
 import Settings from './Settings'
 import Auth from './Auth'
 const Controllers = {
-    Settings,
+    PostController,
+Settings,
 Auth,
 }
 
