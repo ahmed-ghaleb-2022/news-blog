@@ -31,7 +31,7 @@ export default function Index({ posts }: { posts: Post[] }) {
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="posts" />
+            <Head title="Users" />
             <div className="m-4">
                 <Link href={create().url} className="rounded bg-green-600 px-4 py-2 font-bold text-white hover:bg-green-700">
                     create post
@@ -45,13 +45,13 @@ export default function Index({ posts }: { posts: Post[] }) {
                                     #
                                 </th>
                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                    Title
+                                    Name
                                 </th>
                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                    Content
+                                    Email
                                 </th>
                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                    Created At
+                                    Role
                                 </th>
                                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500 uppercase">
                                     Actions

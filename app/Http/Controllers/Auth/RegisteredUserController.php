@@ -20,7 +20,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): Response
     {
-        return Inertia::render('auth/register');
+        $roles = Role::all();
+        return Inertia::render('auth/register', compact('roles'));
     }
 
     /**
@@ -41,6 +42,8 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+
+        $user->syncRoles($request->roles);
 
         event(new Registered($user));
 
