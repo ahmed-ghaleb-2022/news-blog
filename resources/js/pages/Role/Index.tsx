@@ -1,7 +1,7 @@
-import AppLayout from '@/layouts/app-layout';
 
-import { index, create, show, edit, destroy } from '@/routes/roles';
-import { type BreadcrumbItem } from '@/types';
+import AppLayout from '@/layouts/app-layout';
+import { create, destroy, edit, index, show } from '@/routes/roles';
+import {  type BreadcrumbItem } from '@/types';
 import { Head, Link, useForm } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -10,8 +10,6 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: index().url,
     },
 ];
-
-
 
 type RoleType = {
     id: number;
@@ -23,15 +21,15 @@ type RoleType = {
 };
 
 export default function Index({ roles }: { roles: RoleType[] }) {
+    const { processing, delete: deletePost } = useForm();
+    
 
-    const {  processing, delete : deletePost } = useForm();
+    
 
-    console.log(roles);
-
-   const deleteHandler = (e :React.FormEvent<HTMLFormElement> , $id: number)=>{
-       e.preventDefault();
-       deletePost(destroy($id).url);
-    }
+    const deleteHandler = (e: React.FormEvent<HTMLFormElement>, $id: number) => {
+        e.preventDefault();
+        deletePost(destroy($id).url);
+    };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -40,7 +38,6 @@ export default function Index({ roles }: { roles: RoleType[] }) {
                 <Link href={create().url} className="rounded bg-green-600 px-4 py-2 font-bold text-white hover:bg-green-700">
                     create role
                 </Link>
-
                 <div className="mx-auto mt-20 max-w-7xl">
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
@@ -69,7 +66,9 @@ export default function Index({ roles }: { roles: RoleType[] }) {
                                         <div className="text-sm text-gray-900">{role.name}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">{role.permissions.map((permission: any) => permission.name).join(', ')}</div>
+                                        <div className="text-sm text-gray-900">
+                                            {role.permissions.map((permission: any) => permission.name).join(', ')}
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex gap-2">
@@ -86,11 +85,10 @@ export default function Index({ roles }: { roles: RoleType[] }) {
                                                 Edit
                                             </Link>
 
-                                            <form onSubmit={ (e) => deleteHandler(e, role.id) } className="inline">
-                                                <button
-                                                    type="submit"
-                                                    className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
-                                                >
+                                          
+
+                                            <form onSubmit={(e) => deleteHandler(e, role.id)} className="inline">
+                                                <button type="submit" className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
                                                     Delete
                                                 </button>
                                             </form>
@@ -101,7 +99,6 @@ export default function Index({ roles }: { roles: RoleType[] }) {
                         </tbody>
                     </table>
                 </div>
-
             </div>
         </AppLayout>
     );

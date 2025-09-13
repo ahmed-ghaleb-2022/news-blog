@@ -22,7 +22,8 @@ type RoleForm = {
     }[];
 };
 
-export default function Create({ role, allPermissions }: { role: RoleForm; allPermissions: { id: number; name: string }[] }) {
+
+export default function Edit({ role, allPermissions }: { role: RoleForm; allPermissions: { id: number; name: string }[] }) {
     const { data, setData, put, processing, errors } = useForm<RoleForm>({
         id: role.id,
         name: role.name,

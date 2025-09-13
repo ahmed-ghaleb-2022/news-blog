@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class UserRolesController extends Controller
 {
@@ -11,8 +13,8 @@ class UserRolesController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return inertia::render('Role/Index', compact('roles'));
+        $users = User::with('roles')->get();
+        return inertia::render('UserRoles/Index', compact('users'));
     }
 
     /**
@@ -44,7 +46,9 @@ class UserRolesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::with('roles')->find($id);
+        $allRoles = Role::all();
+        return inertia::render('UserRoles/Edit', compact('user', 'allRoles'));
     }
 
     /**
@@ -52,7 +56,9 @@ class UserRolesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::find($id);
+        $user->syncRoles($request->role_name);
+        return redirect()->route('user-roles.index');
     }
 
     /**
@@ -60,6 +66,8 @@ class UserRolesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->syncRoles([]);
+        return redirect()->route('user-roles.index');
     }
 }

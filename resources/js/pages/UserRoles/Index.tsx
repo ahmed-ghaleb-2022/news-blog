@@ -1,33 +1,23 @@
 import AppLayout from '@/layouts/app-layout';
 
-import { index, create, show, edit, destroy } from '@/routes/posts';
-import { type BreadcrumbItem } from '@/types';
+import { create, destroy, edit, index, show } from '@/routes/user-roles';
+import { UserType, type BreadcrumbItem } from '@/types';
 import { Head, Link, useForm } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'All posts',
+        title: 'Users and Roles',
         href: index().url,
     },
 ];
 
-interface Post {
-    id: number;
-    title: string;
-    content: string;
-    created_at: string;
-    updated_at: string;
-}
+export default function Index({ users }: { users: UserType[] }) {
+    const { delete: deletePost } = useForm();
 
-export default function Index({ posts }: { posts: Post[] }) {
-
-    const {  processing, delete : deletePost } = useForm();
-
-
-   const deleteHandler = (e :React.FormEvent<HTMLFormElement> , $id: number)=>{
-       e.preventDefault();
-       deletePost(destroy($id).url);
-    }
+    const deleteHandler = (e: React.FormEvent<HTMLFormElement>, $id: number) => {
+        e.preventDefault();
+        deletePost(destroy($id).url);
+    };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -59,47 +49,38 @@ export default function Index({ posts }: { posts: Post[] }) {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-200 bg-white">
-                            {posts.map((post, index) => (
-                                <tr key={post.id}>
+                            {users.map((user, index) => (
+                                <tr key={user.id}>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="text-sm text-gray-900">{index + 1}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">{post.title}</div>
+                                        <div className="text-sm text-gray-900">{user.name}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">{post.content.substring(0, 100).replace(/<[^>]+>/g, '')} ...</div>
+                                        <div className="text-sm text-gray-900">{user.email}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-900">
-                                            {new Date(post.created_at).toLocaleDateString('de-DE', {
-                                                year: 'numeric',
-                                                month: '2-digit',
-                                                day: '2-digit',
-                                            })}
-                                        </div>
+                                        <div className="text-sm text-gray-900">{user.roles.map((role: any) => role.name).join(', ')}</div>
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex gap-2">
                                             <Link
-                                                href={show(post.id).url}
+                                                href={show(user.id).url}
                                                 className="rounded bg-teal-600 px-4 py-2 font-bold text-white hover:bg-teal-700"
                                             >
                                                 view
                                             </Link>
                                             <Link
-                                                href={edit(post.id).url}
+                                                href={edit(user.id).url}
                                                 className="rounded bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
                                             >
                                                 Edit
                                             </Link>
 
-                                            <form onSubmit={ (e) => deleteHandler(e, post.id) } className="inline">
-                                                <button
-                                                    type="submit"
-                                                    className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
-                                                >
-                                                    Delete
+                                            <form onSubmit={(e) => deleteHandler(e, user.id)} className="inline">
+                                                <button type="submit" className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
+                                                    Clear
                                                 </button>
                                             </form>
                                         </div>

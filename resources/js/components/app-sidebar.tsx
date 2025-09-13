@@ -3,9 +3,10 @@ import { NavMain } from '@/components/nav-main';
 import { NavUser } from '@/components/nav-user';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { dashboard} from '@/routes';
+import { index } from '@/routes/user-roles';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
-import { ShieldUser, Newspaper, LayoutGrid } from 'lucide-react';
+import { ShieldUser, Newspaper, LayoutGrid, UserCog } from 'lucide-react';
 import AppLogo from './app-logo';
 
 const mainNavItems: NavItem[] = [
@@ -18,6 +19,11 @@ const mainNavItems: NavItem[] = [
         title: 'Posts',
         href: "/posts",
         icon: Newspaper,
+    },
+    {
+        title: 'Users',
+        href: index(),
+        icon: UserCog,
     },
     {
         title: 'Roles',

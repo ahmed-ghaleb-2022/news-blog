@@ -30,7 +30,7 @@ interface Post {
     updated_at: string;
 }
 
-export default function Create({ post  }: { post: Post }) {
+export default function Edit({ post  }: { post: Post }) {
     const { data, setData, put, processing, errors } = useForm({
         title: post.title,
         content: post.content,
@@ -41,7 +41,7 @@ export default function Create({ post  }: { post: Post }) {
         put(update(post.id).url);
     };
 
-    console.log(post);
+    
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="edit post" />

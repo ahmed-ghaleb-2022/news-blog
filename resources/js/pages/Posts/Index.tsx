@@ -1,6 +1,7 @@
+import Can from '@/components/Can';
 import AppLayout from '@/layouts/app-layout';
 
-import { index, create, show, edit, destroy } from '@/routes/posts';
+import { create, destroy, edit, index, show } from '@/routes/posts';
 import { type BreadcrumbItem } from '@/types';
 import { Head, Link, useForm } from '@inertiajs/react';
 
@@ -20,14 +21,12 @@ interface Post {
 }
 
 export default function Index({ posts }: { posts: Post[] }) {
+    const { processing, delete: deletePost } = useForm();
 
-    const {  processing, delete : deletePost } = useForm();
-
-
-   const deleteHandler = (e :React.FormEvent<HTMLFormElement> , $id: number)=>{
-       e.preventDefault();
-       deletePost(destroy($id).url);
-    }
+    const deleteHandler = (e: React.FormEvent<HTMLFormElement>, $id: number) => {
+        e.preventDefault();
+        deletePost(destroy($id).url);
+    };
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
@@ -81,27 +80,33 @@ export default function Index({ posts }: { posts: Post[] }) {
                                     </td>
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex gap-2">
-                                            <Link
-                                                href={show(post.id).url}
-                                                className="rounded bg-teal-600 px-4 py-2 font-bold text-white hover:bg-teal-700"
-                                            >
-                                                view
-                                            </Link>
-                                            <Link
-                                                href={edit(post.id).url}
-                                                className="rounded bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
-                                            >
-                                                Edit
-                                            </Link>
-
-                                            <form onSubmit={ (e) => deleteHandler(e, post.id) } className="inline">
-                                                <button
-                                                    type="submit"
-                                                    className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
+                                            <Can permission="post.view">
+                                                <Link
+                                                    href={show(post.id).url}
+                                                    className="rounded bg-teal-600 px-4 py-2 font-bold text-white hover:bg-teal-700"
                                                 >
-                                                    Delete
-                                                </button>
-                                            </form>
+                                                    view
+                                                </Link>
+                                            </Can>
+                                            <Can permission="post.edit">
+                                                <Link
+                                                    href={edit(post.id).url}
+                                                    className="rounded bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                                                >
+                                                    Edit
+                                                </Link>
+                                            </Can>
+
+                                            <Can permission="post.delete">
+                                                <form onSubmit={(e) => deleteHandler(e, post.id)} className="inline">
+                                                    <button
+                                                        type="submit"
+                                                        className="rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </form>
+                                            </Can>
                                         </div>
                                     </td>
                                 </tr>

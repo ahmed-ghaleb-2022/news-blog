@@ -40,3 +40,34 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+//Meine Typen
+
+export type RoleType = {
+    guard_name: string;
+    id: number;
+    name: string;
+};
+
+export type UserType = {
+    id: number;
+    name: string;
+    email: string;
+    roles: RoleType[];
+    permissions: string[];
+};
+
+
+export type AuthType = {
+    user: UserType | null;
+};
+
+export type PageProps = {
+    auth: AuthType;
+    name?: string;
+    quote?: {
+        message: string;
+        author: string;
+    };
+    sidebarOpen?: boolean;
+};

@@ -1,7 +1,7 @@
-import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
+import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
+ * @see app/Http/Controllers/UserRolesController.php:14
  * @route '/user-roles'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
+ * @see app/Http/Controllers/UserRolesController.php:14
  * @route '/user-roles'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
+ * @see app/Http/Controllers/UserRolesController.php:14
  * @route '/user-roles'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
+ * @see app/Http/Controllers/UserRolesController.php:14
  * @route '/user-roles'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -42,44 +42,9 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
- * @route '/user-roles'
- */
-    const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: index.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
- * @route '/user-roles'
- */
-        indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\UserRolesController::index
- * @see app/Http/Controllers/UserRolesController.php:12
- * @route '/user-roles'
- */
-        indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: index.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    index.form = indexForm
 /**
 * @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
+ * @see app/Http/Controllers/UserRolesController.php:23
  * @route '/user-roles/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -94,7 +59,7 @@ create.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
+ * @see app/Http/Controllers/UserRolesController.php:23
  * @route '/user-roles/create'
  */
 create.url = (options?: RouteQueryOptions) => {
@@ -103,7 +68,7 @@ create.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
+ * @see app/Http/Controllers/UserRolesController.php:23
  * @route '/user-roles/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -112,7 +77,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
+ * @see app/Http/Controllers/UserRolesController.php:23
  * @route '/user-roles/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -120,44 +85,9 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
- * @route '/user-roles/create'
- */
-    const createForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: create.url(options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
- * @route '/user-roles/create'
- */
-        createForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url(options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\UserRolesController::create
- * @see app/Http/Controllers/UserRolesController.php:21
- * @route '/user-roles/create'
- */
-        createForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: create.url({
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    create.form = createForm
 /**
 * @see \App\Http\Controllers\UserRolesController::store
- * @see app/Http/Controllers/UserRolesController.php:29
+ * @see app/Http/Controllers/UserRolesController.php:31
  * @route '/user-roles'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -172,7 +102,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::store
- * @see app/Http/Controllers/UserRolesController.php:29
+ * @see app/Http/Controllers/UserRolesController.php:31
  * @route '/user-roles'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -181,7 +111,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::store
- * @see app/Http/Controllers/UserRolesController.php:29
+ * @see app/Http/Controllers/UserRolesController.php:31
  * @route '/user-roles'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -189,30 +119,9 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     method: 'post',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::store
- * @see app/Http/Controllers/UserRolesController.php:29
- * @route '/user-roles'
- */
-    const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: store.url(options),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::store
- * @see app/Http/Controllers/UserRolesController.php:29
- * @route '/user-roles'
- */
-        storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: store.url(options),
-            method: 'post',
-        })
-    
-    store.form = storeForm
 /**
 * @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
+ * @see app/Http/Controllers/UserRolesController.php:39
  * @route '/user-roles/{user_role}'
  */
 export const show = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -227,7 +136,7 @@ show.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
+ * @see app/Http/Controllers/UserRolesController.php:39
  * @route '/user-roles/{user_role}'
  */
 show.url = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -255,7 +164,7 @@ show.url = (args: { user_role: string | number } | [user_role: string | number ]
 
 /**
 * @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
+ * @see app/Http/Controllers/UserRolesController.php:39
  * @route '/user-roles/{user_role}'
  */
 show.get = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -264,7 +173,7 @@ show.get = (args: { user_role: string | number } | [user_role: string | number ]
 })
 /**
 * @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
+ * @see app/Http/Controllers/UserRolesController.php:39
  * @route '/user-roles/{user_role}'
  */
 show.head = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -272,44 +181,9 @@ show.head = (args: { user_role: string | number } | [user_role: string | number 
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
- * @route '/user-roles/{user_role}'
- */
-    const showForm = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: show.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
- * @route '/user-roles/{user_role}'
- */
-        showForm.get = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\UserRolesController::show
- * @see app/Http/Controllers/UserRolesController.php:37
- * @route '/user-roles/{user_role}'
- */
-        showForm.head = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: show.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    show.form = showForm
 /**
 * @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
+ * @see app/Http/Controllers/UserRolesController.php:47
  * @route '/user-roles/{user_role}/edit'
  */
 export const edit = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -324,7 +198,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
+ * @see app/Http/Controllers/UserRolesController.php:47
  * @route '/user-roles/{user_role}/edit'
  */
 edit.url = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -352,7 +226,7 @@ edit.url = (args: { user_role: string | number } | [user_role: string | number ]
 
 /**
 * @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
+ * @see app/Http/Controllers/UserRolesController.php:47
  * @route '/user-roles/{user_role}/edit'
  */
 edit.get = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -361,7 +235,7 @@ edit.get = (args: { user_role: string | number } | [user_role: string | number ]
 })
 /**
 * @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
+ * @see app/Http/Controllers/UserRolesController.php:47
  * @route '/user-roles/{user_role}/edit'
  */
 edit.head = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -369,44 +243,9 @@ edit.head = (args: { user_role: string | number } | [user_role: string | number 
     method: 'head',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
- * @route '/user-roles/{user_role}/edit'
- */
-    const editForm = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-        action: edit.url(args, options),
-        method: 'get',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
- * @route '/user-roles/{user_role}/edit'
- */
-        editForm.get = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, options),
-            method: 'get',
-        })
-            /**
-* @see \App\Http\Controllers\UserRolesController::edit
- * @see app/Http/Controllers/UserRolesController.php:45
- * @route '/user-roles/{user_role}/edit'
- */
-        editForm.head = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
-            action: edit.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'HEAD',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'get',
-        })
-    
-    edit.form = editForm
 /**
 * @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
+ * @see app/Http/Controllers/UserRolesController.php:57
  * @route '/user-roles/{user_role}'
  */
 export const update = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -421,7 +260,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
+ * @see app/Http/Controllers/UserRolesController.php:57
  * @route '/user-roles/{user_role}'
  */
 update.url = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -449,7 +288,7 @@ update.url = (args: { user_role: string | number } | [user_role: string | number
 
 /**
 * @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
+ * @see app/Http/Controllers/UserRolesController.php:57
  * @route '/user-roles/{user_role}'
  */
 update.put = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -458,7 +297,7 @@ update.put = (args: { user_role: string | number } | [user_role: string | number
 })
 /**
 * @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
+ * @see app/Http/Controllers/UserRolesController.php:57
  * @route '/user-roles/{user_role}'
  */
 update.patch = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'patch'> => ({
@@ -466,54 +305,9 @@ update.patch = (args: { user_role: string | number } | [user_role: string | numb
     method: 'patch',
 })
 
-    /**
-* @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
- * @route '/user-roles/{user_role}'
- */
-    const updateForm = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: update.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'PUT',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
- * @route '/user-roles/{user_role}'
- */
-        updateForm.put = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PUT',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-            /**
-* @see \App\Http\Controllers\UserRolesController::update
- * @see app/Http/Controllers/UserRolesController.php:53
- * @route '/user-roles/{user_role}'
- */
-        updateForm.patch = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: update.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'PATCH',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    update.form = updateForm
 /**
 * @see \App\Http\Controllers\UserRolesController::destroy
- * @see app/Http/Controllers/UserRolesController.php:61
+ * @see app/Http/Controllers/UserRolesController.php:67
  * @route '/user-roles/{user_role}'
  */
 export const destroy = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -528,7 +322,7 @@ destroy.definition = {
 
 /**
 * @see \App\Http\Controllers\UserRolesController::destroy
- * @see app/Http/Controllers/UserRolesController.php:61
+ * @see app/Http/Controllers/UserRolesController.php:67
  * @route '/user-roles/{user_role}'
  */
 destroy.url = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -556,45 +350,13 @@ destroy.url = (args: { user_role: string | number } | [user_role: string | numbe
 
 /**
 * @see \App\Http\Controllers\UserRolesController::destroy
- * @see app/Http/Controllers/UserRolesController.php:61
+ * @see app/Http/Controllers/UserRolesController.php:67
  * @route '/user-roles/{user_role}'
  */
 destroy.delete = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
     url: destroy.url(args, options),
     method: 'delete',
 })
-
-    /**
-* @see \App\Http\Controllers\UserRolesController::destroy
- * @see app/Http/Controllers/UserRolesController.php:61
- * @route '/user-roles/{user_role}'
- */
-    const destroyForm = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-        action: destroy.url(args, {
-                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                        _method: 'DELETE',
-                        ...(options?.query ?? options?.mergeQuery ?? {}),
-                    }
-                }),
-        method: 'post',
-    })
-
-            /**
-* @see \App\Http\Controllers\UserRolesController::destroy
- * @see app/Http/Controllers/UserRolesController.php:61
- * @route '/user-roles/{user_role}'
- */
-        destroyForm.delete = (args: { user_role: string | number } | [user_role: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-            action: destroy.url(args, {
-                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
-                            _method: 'DELETE',
-                            ...(options?.query ?? options?.mergeQuery ?? {}),
-                        }
-                    }),
-            method: 'post',
-        })
-    
-    destroy.form = destroyForm
 const userRoles = {
     index,
 create,
